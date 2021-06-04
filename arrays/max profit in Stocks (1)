@@ -1,0 +1,124 @@
+Q. Maximum profit in a Stock : Part 1 
+
+
+->
+
+
+ @ OPTIMIZED METHOD -       {O(N)-TIME    O(1)-SPACE}
+
+Algorithm:
+*While traversing the array once we find thhe minimum value
+*here we first find the minimum value so far and then compare the minimum value with the current value 
+*the data is being stored in  profit
+*if profit > max_profit then profit is stored at max_profit
+*the max_profit is the maximum profit of the stock 
+
+
+=>code
+
+
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	int[]a={0,5,2,6,1,4,10,21};
+		int max=0;
+		int minSofar = a[0];
+		for(int i=0;i<a.length;i++)    
+		{
+		    minSofar = Math.min(minSofar,a[i]);  
+		    int profit =a[i]- minSofar;
+		    if(profit>max){
+		        max=profit;
+		    }
+		}
+		System.out.println(max);
+	}
+}
+
+
+
+
+@ SOMEWHAT OPTIMIZED:   {O(N)-TIME  O(N)-SPACE}
+
+
+Algorithm:
+
+* create an auxialary array of same size of a
+* put the last element of the array "a" into the auxialary array "aux"
+* compare the element a[n-1] with the aux[n] and the greater element is put at the position aux[n-1] : loop is made until it reaches a[0]
+ {this is called as preprocessing}
+* subtract a[i] with aux[i] and store the value at profit 
+* the greatest value among all is the Maximum Value 
+ 
+
+=> code
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) 
+	{
+	     int[]a={5,2,6,1,4,10,21};
+	     System.out.println();
+	     int[]aux=new int[a.length];
+	     int max_profit=0;
+	     int i=0;
+	     int n=a.length-1;
+	     aux[n]=a[n];
+	     
+	     while(n-1>i)
+	     {
+	       aux[n-1]=Math.max(aux[n],a[n-1]);  
+	         n--;
+	     }
+	     
+	     for(i=0;i<a.length;i++){
+	         int profit = aux[i]-a[i];
+	         if(profit>max_profit){
+	             max_profit=profit;
+	         }
+	     }
+	     System.out.println(max_profit);
+	     
+	     
+	 
+	}
+}
+
+
+
+
+
+
+
+ @ BRUTEFORCE METHOD :   { O(N^2)-TIME  O(1)-SPACE }
+
+algorithm-
+    *it checks a[0] with all the elements (0->n-1) and then checks a[1](1->n-1) with all the elements and so on....
+    *profit is => ist element - all other element which gives the most number of difference
+    *profit is saved into a variable max_profit if profit > max_profit then profit is being stored in max-profit 
+    *what is returned is max_profit 
+
+code
+
+=>  
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	    int max_profit =0;
+	     int[]a={5,2,6,1,4,10,21};
+	     for(int i=0;i<a.length;i++){
+	         for(int j=0;j<a.length;j++){
+	             int profit_so_far = a[i]-a[j];
+	             if(profit_so_far>max_profit){
+	                 max_profit=profit_so_far;
+	             }
+	         
+	     }
+		 
+	}
+	System.out.println(max_profit);
+}
+}
+
