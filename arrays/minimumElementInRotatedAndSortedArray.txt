@@ -26,7 +26,7 @@ public class intermediateArray
          
         if((low==high || a[low]<a[high]))          // if only 1 element is present or if the array is sorted then return the first element 
            {
-               return low;
+               return a[low];
           }
          
         int mid = (low + high) / 2;
