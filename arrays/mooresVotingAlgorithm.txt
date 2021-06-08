@@ -1,0 +1,49 @@
+MOORES VOTING ALGORITHM "OR" maximum element in an array "OR" element that repeats n/k times in the array :
+
+
+
+=>
+anuj bhaiya:
+
+package com.tirtha.TryOut;
+
+import java.util.Arrays;
+
+public class intermediateArray {
+            public static void main (String[] args) {
+                int[]a={1,1,2,3,4,5,1,2,1,1};
+                int firstIndex =0;
+                int count =1;
+                int c=0;
+                int k =a.length/2;
+                for(int i=1;i<a.length;i++){
+                    if(a[firstIndex]==a[i]){
+                        count++;
+                    }
+                    else{
+                        count--;
+                    }
+                    if(count==0) {
+                        firstIndex=i;
+                        count++;
+                    }
+                }
+
+                for(int j=0;j<a.length;j++){
+                    if(a[firstIndex]==a[j]){
+                        c++;
+                    }
+                }
+                if(c>=k){
+                    System.out.println("yes it is there and the number is : "+a[firstIndex]+" which is repeated "+ c+" times");
+                }
+                else System.out.println("no");
+
+
+
+
+    }
+            }
+
+
+
