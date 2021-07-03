@@ -7,7 +7,7 @@ Q. Maximum profit in a Stock : Part 1
  @ OPTIMIZED METHOD -       {O(N)-TIME    O(1)-SPACE}
 
 Algorithm:
-*While traversing the array once we find thhe minimum value
+*While traversing the array once we find the minimum value
 *here we first find the minimum value so far and then compare the minimum value with the current value 
 *the data is being stored in  profit
 *if profit > max_profit then profit is stored at max_profit
