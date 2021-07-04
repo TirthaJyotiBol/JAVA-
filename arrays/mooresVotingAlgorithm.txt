@@ -2,6 +2,43 @@ MOORES VOTING ALGORITHM "OR" maximum element in an array "OR" element that repea
 
 
 
+@BruteForce Method: space->o(1)  Time->o(n^2)
+
+#Find the frequency of each element and compare freq with maxCount
+#if freq > maxcount then the most repeated element is in the index of max count
+#if (maxCount>n/2) => print the index of teh element
+
+class mooersAlgorithm {
+    public static void main(String[] args) {
+     int[]a={1,2,3,2,2,2};
+     int maxcount=0;
+     int index =0;
+     for(int i=0;i<a.length;i++){
+         int count =0;
+         for(int j=1;j<a.length;j++){
+             if(a[i]==a[j]){
+                 count++;
+             }
+             if(count>maxcount){
+                 maxcount=count;
+                 index = i;
+             }
+         }
+     }
+     if(maxcount>(a.length)/2){
+         System.out.println("the maximum element is " + a[index]);
+     }
+     else{
+         System.out.println("There is no such element");
+     }
+    }
+}
+
+
+
+
+
+
 =>
 anuj bhaiya:
 
