@@ -1,5 +1,58 @@
 MOORES VOTING ALGORITHM "OR" maximum element in an array "OR" element that repeats n/k times in the array :
 
+=>
+
+@ MOORE'S ALGORITHM : time-> o(n) Space -> o(1)
+
+ALGORITHM:
+#traverse the array once 
+#take index 0 as the majority element index
+#compare this with other elements 
+#if matched then increase the count
+#else decrease the count
+#if the count ==0 then take ansIndex = i 
+#a[index] is the mostly repeated element in the array
+#if the count of a[i]>n/2 then this is the element 
+ else there is no such element
+
+
+
+class MooresAlgorithm {
+    public static void main(String[] args) {
+        int[]a={1,2,2,1};
+        int ansIndex = 0;
+        int count=1;
+        for(int i=0;i<a.length;i++){
+            if(a[ansIndex]==a[i]){
+                count++;
+            }
+            else{
+                count--;
+            }
+            if(count==0){
+                ansIndex = i;
+                count++;
+            }
+        }
+        int c=0;
+        for(int i=0;i<a.length;i++){
+            if(a[ansIndex]==a[i]){
+                c++;
+            }
+        }
+            if(c>a.length/2){
+                System.out.println("The majority number is "+ a[ansIndex]);
+            }
+            else{
+                System.out.println("there is no such element");
+            }
+        
+    }
+}
+
+
+
+
 
 
 @BruteForce Method: space->o(1)  Time->o(n^2)
@@ -77,52 +130,5 @@ class aBitOptimised {
        
     }
 }
-
-
-
-
-
-
-
-package com.tirtha.TryOut;
-
-import java.util.Arrays;
-
-public class intermediateArray {
-            public static void main (String[] args) {
-                int[]a={1,1,2,3,4,5,1,2,1,1};
-                int firstIndex =0;
-                int count =1;
-                int c=0;
-                int k =a.length/2;
-                for(int i=1;i<a.length;i++){
-                    if(a[firstIndex]==a[i]){
-                        count++;
-                    }
-                    else{
-                        count--;
-                    }
-                    if(count==0) {
-                        firstIndex=i;
-                        count++;
-                    }
-                }
-
-                for(int j=0;j<a.length;j++){
-                    if(a[firstIndex]==a[j]){
-                        c++;
-                    }
-                }
-                if(c>=k){
-                    System.out.println("yes it is there and the number is : "+a[firstIndex]+" which is repeated "+ c+" times");
-                }
-                else System.out.println("no");
-
-
-
-
-    }
-            }
-
 
 
