@@ -4,6 +4,7 @@ MOORES VOTING ALGORITHM "OR" maximum element in an array "OR" element that repea
 
 @BruteForce Method: space->o(1)  Time->o(n^2)
 
+ALGORITHM:
 #Find the frequency of each element and compare freq with maxCount
 #if freq > maxcount then the most repeated element is in the index of max count
 #if (maxCount>n/2) => print the index of teh element
@@ -36,11 +37,52 @@ class mooersAlgorithm {
 
 
 
+@ A bit optimised : Time-> o(nlogn)  space ->o(1)
+
+ALGORITHM:
+#sort the array
+#compare the adjacent elements and increase the count if equal found
+#count ==1 if not equal
+#if (count>maxvount) -> maxcount=count
+#finally check if maxcount>n/2 { if yes then print a[index] , else print "no elements"}
+
+
+class aBitOptimised {
+    public static void main(String[] args) {
+       int[]a={1,2,3,4,4,4,4};                // sorted array is taken
+       int maxcount =0;
+       int count=1;
+       int index=0;
+       for(int i=0;i<a.length-1;i++){     
+           if(a[i]==a[i+1]){                // if adjacent elements are equal then increase the count
+               count++;
+           }
+           else{
+               count =1;                   // if adjacent elements are not found then decrease make count =1 (or count=1 , as your wish)
+           }
+            if(count>maxcount){
+               maxcount=count;
+                index=i;                   // index of the most repeated element
+       }
+          
+           }
+           System.out.println(maxcount);
+           if(maxcount>a.length/2){
+               System.out.println("The maximum element is "+ a[index]);     // if the max element is > n/2 then yes its the majority element
+           }
+           else{
+               System.out.println("Threr is no such element");
+           }
+           
+       
+    }
+}
 
 
 
-=>
-anuj bhaiya:
+
+
+
 
 package com.tirtha.TryOut;
 
