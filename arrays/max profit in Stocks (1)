@@ -102,23 +102,25 @@ algorithm-
 code
 
 =>  
-import java.io.*;
-
-class GFG {
-	public static void main (String[] args) {
-	    int max_profit =0;
-	     int[]a={5,2,6,1,4,10,21};
-	     for(int i=0;i<a.length;i++){
-	         for(int j=0;j<a.length;j++){
-	             int profit_so_far = a[i]-a[j];
-	             if(profit_so_far>max_profit){
-	                 max_profit=profit_so_far;
-	             }
-	         
-	     }
-		 
-	}
-	System.out.println(max_profit);
+class HelloWorld {
+    public static void main(String[] args) {
+        int[]a={3,5,0,7,4,19,3};
+        int maxProfit = 0;
+        for(int i=0;i<a.length;i++){
+            int buy = a[i];
+            for(int j=i+1;j<a.length;j++){
+               int sell = a[j];
+                int currentProfit = profit(sell,buy);
+                if(currentProfit>maxProfit){
+                    maxProfit = currentProfit;
+                }
+            }
+        }
+        System.out.println(maxProfit);
+        
+    }
+    static int profit(int a, int b){
+        int c = a-b;
+        return c;
+    }
 }
-}
-
