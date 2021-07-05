@@ -1,0 +1,29 @@
+compare a[i+1] with a[i] 
+if(a[i+1]>a[i]} -> find the profit => a[i+1] - a[i]
+sum of all the profit =>  profit += a[i+1] - a[i]
+
+
+class stock {
+    public static void main(String[] args) {
+       int[] a = {5,2,6,1,4,7,3,16};
+       int totalProfit=0;
+       System.out.print("The profits are : ");
+       for(int i=1;i<a.length-1;i++){
+           if(a[i+1]>a[i]){
+               int profit = a[i+1]-a[i];
+               System.out.print(profit+" ");
+               totalProfit+=profit;
+               
+           }
+          
+       }
+       System.out.println();
+       System.out.print("Total Profit is "+ totalProfit);
+        
+    }
+}
+
+
+output:
+The profits are : 4 3 3 13 
+Total Profit is  23
