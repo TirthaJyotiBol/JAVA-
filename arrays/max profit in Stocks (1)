@@ -53,36 +53,38 @@ Algorithm:
  
 
 => code
-import java.io.*;
-
-class GFG {
-	public static void main (String[] args) 
-	{
-	     int[]a={5,2,6,1,4,10,21};
-	     System.out.println();
-	     int[]aux=new int[a.length];
-	     int max_profit=0;
-	     int i=0;
-	     int n=a.length-1;
-	     aux[n]=a[n];
-	     
-	     while(n-1>i)
-	     {
-	       aux[n-1]=Math.max(aux[n],a[n-1]);  
-	         n--;
-	     }
-	     
-	     for(i=0;i<a.length;i++){
-	         int profit = aux[i]-a[i];
-	         if(profit>max_profit){
-	             max_profit=profit;
-	         }
-	     }
-	     System.out.println(max_profit);
-	     
-	     
-	 
-	}
+class HelloWorld {
+    public static void main(String[] args) {
+       int[]a= {3,1,4,18,7,2,5};
+       int auxArr[]=new int[a.length];                 //created auxialary array
+       auxArr[auxArr.length-1]=a[a.length-1];
+       
+      for(int i=a.length-2;i>=0;i--){
+           auxArr[i]=greatest(a[i],auxArr[i+1]);       //put elements in the auxialary array i.e the max value through preprocessing
+      }
+      
+      int maxProfit = 0;
+      
+      for(int i=0;i<a.length;i++){
+          int currentProfit = profit(auxArr[i],a[i]);   // {aux[i]-a[i]} is done 
+              if(currentProfit>maxProfit){
+                  maxProfit=currentProfit;            // if this profit is greated than the max profit then value is put in max profit
+              }
+          }
+          System.out.println(maxProfit);
+      }
+      
+      
+    static int greatest(int a ,int b)              // function for greatest number
+    {
+        if(a>b){return a;}
+        else if(b>a){return b;}
+        else{return a;}
+    }
+    static int profit(int a ,int b)                // function for current-profit
+    {
+        return a-b;
+    }
 }
 
 
