@@ -1,0 +1,26 @@
+package trial;
+import java.util.*;
+public class polit {
+	public static void main(String[]args) {
+		int[]a= {2,3,1,5,7,1,2,5,4,3};
+		int max=Integer.MIN_VALUE;               //initially took max as the minimum integer
+		int k=3;                                 // declared the size of the window
+		
+		int current_sum=0;                     //sum of first window is considered as current sum
+		for(int i=0;i<k;i++) {
+			current_sum += a[i];
+		}
+
+		
+		int window_sum =current_sum;                 
+		
+		for(int i=k;i<a.length;i++) {                            //finding the sum after iteration starting from i=k [3] 
+			window_sum+=a[i]-a[i-k];                               // removing the previous element ->a[i-k} is the previous element        
+			if(window_sum>current_sum) {max=window_sum;}                   
+			else max = current_sum;
+		}
+		
+		System.out.println(max);
+	}
+
+}
