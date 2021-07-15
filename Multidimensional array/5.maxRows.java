@@ -11,7 +11,6 @@ public class maxRows {
 		      
 		        
 		        int col = a[0].length-1;
-		        int count=0;
 		        int maxRow=-1;
 		        for(int i=0;i<a.length;i++){
 
