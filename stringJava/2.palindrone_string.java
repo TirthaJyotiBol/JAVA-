@@ -4,19 +4,16 @@ public class palindrone_string {
 	public static void main(String[]args) {
 		String s = "kadak";
 		String rev ="";
+/* Method 1 */
 		
-//		for(int i=s.length()-1;i>=0;i--) {
-//			
-//			rev+=s.charAt(i);
-//		}
-//		
-//		if(rev.equals(s)) {System.out.println("Its Plaindrone");}
-//		else {System.out.println("Not a Plaindrone");}
-//		
+		for(int i=s.length()-1;i>=0;i--)  {  rev+=s.charAt(i);  }
 		
-		/*
-		 * Another method is without using a extra string and traversing  -> s.length()/2 
-		 * */
+		if(rev.equals(s)) {System.out.println("Its Plaindrone");}
+		else {System.out.println("Not a Plaindrone");}
+		
+		
+		
+/* Method 2*/
 		
 		
 		boolean isPalindrone =true;
