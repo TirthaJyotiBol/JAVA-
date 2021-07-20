@@ -41,7 +41,7 @@ public class check_If_valid_Shuffle {
 			
 		}
 		else {
-			System.out.println("Not shuffled : length not matching");
+			System.out.println("Not shuffled");
 		}
 	
 		
