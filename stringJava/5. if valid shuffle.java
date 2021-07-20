@@ -8,9 +8,9 @@ package stringJava;
 public class check_If_valid_Shuffle {
 
 	public static void main(String[]args) {
-		String s1 = "tirtha";
-		String s2 ="2345";
-		String res ="tir2t3h4a4";
+		String s1 = "abcd";
+		String s2 ="2233";
+		String res ="a2b2c3dd";
 		
 		boolean is = false;
 		if(res.length() == s1.length()+s2.length()) {
@@ -36,12 +36,21 @@ public class check_If_valid_Shuffle {
 				
 				k++;
 			}
-			if(is) {System.out.println("Shuffled");}
+			
+			if(i<s1.length() || j<s2.length()) {
+				/*
+				 * after traversing the whole string if any characters are left or not
+				 */
+				
+				System.out.println("not shuffled");
+			}
+			
+			else if(is) {System.out.println("Shuffled");}
 			if(!is){System.out.println("Not shuffled");}
 			
 		}
 		else {
-			System.out.println("Not shuffled");
+			System.out.println("Not shuffled : length not matching");
 		}
 	
 		
