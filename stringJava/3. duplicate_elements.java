@@ -21,6 +21,9 @@ public class duplicateElements {
 				/* 
 				 * if we didn't have the element then put the next element 
 				 * with value = oldvalue + 1 
+				 
+				 * since maps donot store duplicate elements thus  each element is present only once and if duplicate  element is found the value is increased 
+				 * by 1
 				 * */
 				
 				int oldValue = hm.get(s.charAt(i));
