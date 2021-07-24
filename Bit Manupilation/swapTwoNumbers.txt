@@ -1,0 +1,23 @@
+SWAP numbers:
+
+We can swap two numbers by  XORing the values 3 times :
+
+The code is :
+
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		System.out.println("SwAP using bits");
+		int a=1;
+		int b=7;
+		a=a^b;
+		b=a^b;
+		a=a^b;
+		System.out.println("After swapping the values of a and b are "+a+ " "+b);
+	}
+}
+
+
+                                                     O/P
+                                               a : 7     b: 1
