@@ -34,7 +34,13 @@ class MooresAlgorithm {
                 count++;
             }
         }
-        int c=0;
+        
+        /* count is found now check how many times the number is repeated un the array
+           if its greates than n/2 then it is our number else there is no such number 
+        */
+        
+        int c=0;  //count of a[ansIndex}
+        
         for(int i=0;i<a.length;i++){
             if(a[ansIndex]==a[i]){
                 c++;
