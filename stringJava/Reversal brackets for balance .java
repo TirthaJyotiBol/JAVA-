@@ -1,18 +1,15 @@
 package strings;
 import java.util.Scanner;
 import java.util.Stack;
-
 public class Reversals_for_making_bracketsBalanced {
 	public static void main(String[]args) {
 		Stack<Character>st = new Stack<>();
 		Scanner scan = new Scanner(System.in);
 		String s = scan.next();
 		
-    //if size is odd then it won't be balanced
 		if(s.length() %2!=0) {
 			System.out.println("Invalid");
 		}
-    
 		else {
 		
 		for(int i=0;i<s.length();i++) {
@@ -25,18 +22,23 @@ public class Reversals_for_making_bracketsBalanced {
 				if(top =='{') {
 					st.pop();
 				}
+				else {
+					st.pop();
+				}
 			}
 			else {
 				st.push(ch);
 			}
 		}
 		
-		int new_len = st.size();
+		 
+		int new_len = st.size();  
 		int n=0;
 		while(st.size()!=0 && st.peek()=='{') {
 			st.pop();
 			n++;
 		}
+		
 		
 		
 		int result = new_len/2 + n%2 ;
