@@ -3,18 +3,18 @@ MOORES VOTING ALGORITHM "OR" maximum element in an array "OR" element that repea
 =>
 
 @ MOORE'S ALGORITHM : time-> o(n) Space -> o(1)
-
+/**
 ALGORITHM:
 #traverse the array once 
-#take index 0 as the majority element index
-#compare this with other elements 
+#take majorityIndex 0 as the majority element index
+#compare this with other elements  by taking index =1;
 #if matched then increase the count
 #else decrease the count
 #if the count ==0 then take ansIndex = i 
 #a[index] is the mostly repeated element in the array
 #if the count of a[i]>n/2 then this is the element 
  else there is no such element
-
+**/
 
 
 class MooresAlgorithm {
@@ -22,7 +22,7 @@ class MooresAlgorithm {
         int[]a={1,2,2,1};
         int ansIndex = 0;
         int count=1;
-        for(int i=0;i<a.length;i++){
+        for(int i=1;i<a.length;i++){
             if(a[ansIndex]==a[i]){
                 count++;
             }
