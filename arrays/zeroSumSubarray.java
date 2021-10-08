@@ -1,4 +1,4 @@
-Q. Zero sum subarrray [if the array is having subarrays whose sum is 0]
+/*Q. Zero sum subarrray [if the array is having subarrays whose sum is 0]
 
 
 
@@ -6,7 +6,7 @@ Q. Zero sum subarrray [if the array is having subarrays whose sum is 0]
 OPTIMIZED:
 Time -> O(n)     space->O(n)
 use set->
-
+*/
 
 public class zeroSumSubarray 
 {
