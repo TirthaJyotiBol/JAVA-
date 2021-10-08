@@ -1,8 +1,8 @@
 import java.util.*;
 public class MyClass {
     public static void main(String args[]) {
-        int[]a={2,3,1,9,8,6,5,-1,-1,9};                         if(a[i] = - sum) then elements are  present  ;
-        boolean check= false;                                      else not present;
+        int[]a={2,3,1,9,8,6,5,-1,-1,9};                         //if(a[i] = - sum) then elements are  present  ;
+        boolean check= false;                                      //else not present;
         Arrays.sort(a);
         for(int i=0;i<a.length-2;i++){
              int k=-a[i];
