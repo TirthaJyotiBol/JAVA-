@@ -1,12 +1,12 @@
-5/31/2021
 
+/*
 Q.11 Rearrange the array in alternating positive and negative items with O(1) extra space.
 
 
 First method is to take a space - here another array "c" is being taken and the elements are there transferred
  
 code :
-
+*/
 public class intermediateArray {
     public static void main(String[] args) {
         System.out.println("Rearrange the positive and negative in an alternating manner");
@@ -34,17 +34,18 @@ public class intermediateArray {
 
 
 
-INPUT --   1 2 3 4 -1 -2 -3 -4 
-OUTPUT --  1 -1 2 -2 3 -3 4 -4
+// INPUT --   1 2 3 4 -1 -2 -3 -4 
+// OUTPUT --  1 -1 2 -2 3 -3 4 -4
 
 
 
 
-Second method is to perform through O(1) i.e. constant space 
+/*Second method is to perform through O(1) i.e. constant space 
 Firstly the elements are arranged in ascending order such that all +ve elements comes to one side and all -ve elements goes to the other side
 start two pointers from start and last and swap the alternating positive and negative elements until low>=high
 
-code :
+code : 
+*/
 
 
   class GFG {
