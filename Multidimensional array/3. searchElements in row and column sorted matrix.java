@@ -1,10 +1,10 @@
-Also a better approcah for the row wise sorted matrix ; but the best version for row wise sorted is shown in another repo  
+/*Also a better approcah for the row wise sorted matrix ; but the best version for row wise sorted is shown in another repo  
 
 * i=0  and  j=a[0].length 
 * if key > a[i][j] -> increment row i++
 * if key < a[i][j] -> decrement col j--
 * if key = a[i][j] -> return element index 
-
+*/
 package multiDimensionalArray;
 import java.util.*;
 
