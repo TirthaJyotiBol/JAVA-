@@ -2,6 +2,9 @@
   
   Q. Use push , pop operations in the middle of a stack at O(1) operation
   	
+	=> using array we can perform the same, but for pop we cannot perform this in O(1)
+  	   to do this in o(1) we use Linked List
+	
   	1. Use fast and slow pointer to find the middle element
   	2. Again traverse upto mid.next to find the previous element
   	3. push() => 
