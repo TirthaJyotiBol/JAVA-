@@ -1,7 +1,7 @@
 /*
    Name : Ordering System
    @author : Tirtha Jyoti Bol
-   Version : 1.0
+   Version : 1.1
    
    Needs to be done : 
 		1. Need to make synchronization to order goods from different fields at a same time
@@ -32,7 +32,7 @@ public class ordering {
 		  void orderPlaced() {
 			  
 			  System.out.print("Hello "+name+" Your Order Has been generated and would be delivered to "+Address+", We will contact you at "+Phone);
-			  System.out.println(" Total : "+total);
+			  System.out.println(" Total : Rs"+total);
 			  System.out.println("Thank You !");
 		  }
 		  
@@ -66,9 +66,17 @@ public class ordering {
 		
 		// Food Order
 		if(choose == 1) {
-			FoodOrder food = new FoodOrder();
-			food.menu();
-			if(food.payment == true) {
+//			FoodOrder food = new FoodOrder();
+//			food.menu();
+//			if(food.payment == true) {
+//				order.orderPlaced();
+//			}
+//			else {
+//				order.orderCancelled();
+//			}
+			food f = new food();
+			f.list();
+			if(f.payment == true) {
 				order.orderPlaced();
 			}
 			else {
@@ -167,7 +175,81 @@ public class ordering {
 		}
 	}
 		 
-	}
+}
+	
+	static class food{
+		boolean payment;
+		int pay = 0;
+		void list() {
+			System.out.println("Your Food Dishes list is shown below, select what you want to Order");
+			HashMap<String , Integer> list = new HashMap<>();
+			list.put("Chilly Chicken",250);
+			list.put("Butter Chicken",200);
+			list.put("Naan",5);
+			list.put("Pasta",120);
+			list.put("Macroni",150);
+			list.put("Pizza",299);
+			list.put("Burger",75);
+			list.put("Sushi",1135);
+			list.put("Ginger Lemon tea",150);
+			for(Map.Entry<String,Integer> lists : list.entrySet()) {
+				System.out.println("Item : "+lists.getKey() +" ("+lists.getValue()+")");
+			}
+			
+			System.out.println("What you want to order ");
+			
+			while(true) {
+			
+			String ord = scan.next();
+			if(list.containsKey(ord)) {
+				pay = pay + list.get(ord);
+			}
+			else {
+				System.out.println("Item Not found");
+			}
+			
+			System.out.println("Type -1 to Order , Type 0 to cancel and type any other key to order more ");
+			int choose = scan.nextInt();
+			
+			// Customer has finished shopping and has to order
+			if(choose == -1) {
+				
+				System.out.println("You have a total of Rs"+ pay +" to pay Do You Want to pay Online ");
+				String ans = scan.next();
+				if(ans.equalsIgnoreCase("yes")) {
+					System.out.println("Press 5 to pay");
+					int onlinePay = scan.nextInt();
+					if(onlinePay == 5) {
+						payment = true;
+						total = pay;
+						System.out.println("Paid Successfully ");
+					}
+					else {
+						payment = false;
+						System.out.println("Transaction Error ");
+					}
+				}
+				else {
+					total = pay;
+					payment = true;
+					System.out.println("Your order has been taken into action , you have choosen COD ");
+				}
+				
+				break;
+		  }
+			
+			if(choose == 0) {
+				payment = false;
+				cancel = true;
+				System.out.println("Your Order has been cancelled");
+				break;
+			}
+			
+	   }
+				
+    }
+ }
+	
 	
 	
 	static class Groceries{
@@ -218,6 +300,7 @@ public class ordering {
 					}
 				}
 				else {
+					total = pay;
 					payment = true;
 					System.out.println("Your order has been taken into action , you have choosen COD ");
 				}
