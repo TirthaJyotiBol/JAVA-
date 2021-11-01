@@ -66,14 +66,6 @@ public class ordering {
 		
 		// Food Order
 		if(choose == 1) {
-//			FoodOrder food = new FoodOrder();
-//			food.menu();
-//			if(food.payment == true) {
-//				order.orderPlaced();
-//			}
-//			else {
-//				order.orderCancelled();
-//			}
 			food f = new food();
 			f.list();
 			if(f.payment == true) {
