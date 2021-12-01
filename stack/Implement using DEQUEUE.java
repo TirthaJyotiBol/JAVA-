@@ -1,6 +1,11 @@
 /*
  	  DEQUE is a "Doubly Ended Queue" - 
  	  Here the operations (push , pull , peek) occurs at both side of the Queue
+ 	  
+ 	  push -> addFirst()
+ 	  pop  -> removeFirst()
+ 	  peek -> peekFirst()
+ 	  
   */
 
 package stack;
@@ -21,8 +26,6 @@ public class Implement_using_dequeue {
 		s.print();
 	}
 	
-  
-  
 	static class stack{
 		Deque<Integer> dq = new LinkedList<>();
 		
