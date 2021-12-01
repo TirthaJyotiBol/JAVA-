@@ -1,3 +1,10 @@
+/*
+push -> addLast()
+poll -> removeFirst()
+peek() -> peekFirst()
+
+*/
+
 package Queue;
 import java.util.*;
 public class Implement_using_DEQUEUE {
@@ -20,16 +27,16 @@ public class Implement_using_DEQUEUE {
 		Deque<Integer>dq = new LinkedList<>();
 		
 		void push(int x) {
-			dq.add(x);
+			dq.addLast(x);
 		}
 		
 		int poll() {
 			if(dq.size()==0) return -1;
-			return dq.poll();
+			return dq.pollFirst();
 		}
 		
 		void peek() {
-			System.out.println(dq.peek());
+			System.out.println(dq.peekFirst());
 		}
 		
 		void print() {
