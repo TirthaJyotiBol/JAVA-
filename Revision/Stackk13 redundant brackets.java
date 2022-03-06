@@ -29,7 +29,7 @@ public class Stack13_redundant_brackets {
 				if( top =='+' || top =='*' || top =='-' || top =='/' ) {
 					stk.pop();
 				}
-				stk.pop();
+				stk.pop(); //
 			}
 		}	
 		
